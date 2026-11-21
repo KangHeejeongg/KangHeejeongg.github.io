@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="AI·IT 개발자 강희정의 치킨 테마 개인 포트폴리오">
+<title>강희정 치킨 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg class="glass-defs" aria-hidden="true" focusable="false">
+  <filter id="liquidGlass" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<div class="oil-bg" aria-hidden="true"><i class="oil-blob one"></i><i class="oil-blob two"></i><i class="oil-blob three"></i></div>
+<canvas id="bubbleCanvas" aria-hidden="true"></canvas>
+<main id="top">
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-copy">
+        <p class="name-tag">강희정 · AI·IT 개발자</p>
+        <h1>현장의 불편을 발견하고,<br>기술로 해결해<br><em>실제 운영까지</em> 연결하는 개발자</h1>
+        <a class="scroll-cue" href="#chicken">아래로 내려 치킨 고르기 <span aria-hidden="true">↓</span></a>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/projects/profile.webp" alt="강희정 프로필 사진" fetchpriority="high">
+        <svg class="photo-sticker sticker-top" aria-hidden="true"><use href="assets/icons.svg#drumstick"/></svg>
+        <svg class="photo-sticker sticker-bottom" aria-hidden="true"><use href="assets/icons.svg#chick"/></svg>
+      </figure>
+    </div>
+    <div class="fryer" aria-hidden="true">
+      <i class="steam s1"></i><i class="steam s2"></i><i class="steam s3"></i>
+      <div class="floaties">
+        <svg class="floaty f1"><use href="assets/icons.svg#nugget"/></svg>
+        <svg class="floaty f2"><use href="assets/icons.svg#wing"/></svg>
+        <svg class="floaty f3"><use href="assets/icons.svg#drumstick"/></svg>
+        <svg class="floaty f4"><use href="assets/icons.svg#nugget"/></svg>
+        <svg class="floaty f5"><use href="assets/icons.svg#wing"/></svg>
+      </div>
+      <div class="pot">
+        <div class="wave"></div>
+        <div class="oil">
+          <i class="bubble b1"></i><i class="bubble b2"></i><i class="bubble b3"></i><i class="bubble b4"></i><i class="bubble b5"></i><i class="bubble b6"></i><i class="bubble b7"></i><i class="bubble b8"></i><i class="bubble b9"></i><i class="bubble b10"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chicken" class="wrap">
+    <div class="section-head"><svg class="head-icon" aria-hidden="true"><use href="assets/icons.svg#drumstick"/></svg><p>Today's Chicken</p><h2>오늘 튀겨 낸 프로젝트</h2><span>마음에 드는 치킨을 골라 레시피를 열어 보세요.</span></div>
+    <div class="chicken-grid">
+
+      <article class="menu-card reveal" id="menu-bot">
+        <svg class="chicken" aria-hidden="true"><use href="assets/icons.svg#nugget"/></svg>
+        <p class="menu-no">너겟 · 업무 자동화</p>
+        <h3>/menu 알림 봇</h3>
+        <p class="menu-copy">작지만 매일 손이 가는, 점심 메뉴 확인 자동화</p>
+        <button type="button" class="btn small" data-open="sheetBot">레시피 보기</button>
+        <dialog id="sheetBot" class="sheet" aria-labelledby="titleBot">
+          <button type="button" class="close" aria-label="닫기">✕</button>
+          <p class="menu-no">SSAFY 15기 실습코치 · 2026.07 –</p>
+          <h3 id="titleBot">/menu 알림 봇</h3>
+          <dl class="recipe">
+            <dt>문제</dt><dd>식단을 보려면 메신저에서 이미지를 매번 찾아야 해서 코치와 교육생이 번거로워했습니다.</dd>
+            <dt>내 역할</dt><dd>불편을 듣고 방식을 정해 직접 만들고 운영했습니다.</dd>
+            <dt>해결</dt><dd>OCR 자동화를 먼저 시도했지만 품질 문제를 확인하고, 수동 입력과 자동 조회를 결합하는 방식으로 바꿨습니다.</dd>
+            <dt>구조</dt><dd>Mattermost <code>/menu</code> → n8n 워크플로 → 식단 조회 → 메신저 응답</dd>
+            <dt>검증</dt><dd>코치와 교육생이 함께 쓰고 있습니다.</dd>
+          </dl>
+          <p class="tags"><span>n8n</span><span>Mattermost</span><span>워크플로 자동화</span></p>
+        </dialog>
+      </article>
+
+      <article class="menu-card reveal" id="menu-farmpi">
+        <svg class="chicken" aria-hidden="true"><use href="assets/icons.svg#wing"/></svg>
+        <p class="menu-no">날개 · 운영 시스템</p>
+        <h3>팜피 운영 어드민</h3>
+        <p class="menu-copy">운영이 가볍게 날 수 있도록 화면부터 API까지 고친 인턴 실무</p>
+        <button type="button" class="btn small" data-open="sheetFarmpi">레시피 보기</button>
+        <dialog id="sheetFarmpi" class="sheet" aria-labelledby="titleFarmpi">
+          <button type="button" class="close" aria-label="닫기">✕</button>
+          <p class="menu-no">팜피 주식회사 개발팀 인턴 · 2024.09 – 2024.12</p>
+          <h3 id="titleFarmpi">팜피 운영 어드민</h3>
+          <dl class="recipe">
+            <dt>문제</dt><dd>사용자 목록이 전체 데이터를 한 번에 불러와 느렸고, 운영에 필요한 가입일 확인과 정렬이 없었습니다.</dd>
+            <dt>내 역할</dt><dd>개발팀 인턴으로 프론트엔드와 미들웨어를 함께 수정했습니다.</dd>
+            <dt>해결</dt><dd>필터 조건에 맞는 정보만 조회하도록 바꾸고, 가입일 컬럼·정렬, 사용자별 애셋·템플릿 수 표시, 이벤트별 결제·참여자 관리를 개발했습니다.</dd>
+            <dt>구조</dt><dd>Vue.js·TypeScript 어드민 → 미들웨어 조회·정렬 API → 응답 구조 반영</dd>
+            <dt>검증</dt><dd>4개 제품, 6개 저장소를 수정·배포했고, 교육 서비스는 DB의 콘텐츠 조회 기록으로 실제 사용을 확인했습니다.</dd>
+          </dl>
+          <p class="tags"><span>Vue.js</span><span>TypeScript</span><span>미들웨어 API</span><span>GitLab</span></p>
+        </dialog>
+      </article>
+
+      <article class="menu-card reveal" id="menu-oson">
+        <svg class="chicken" aria-hidden="true"><use href="assets/icons.svg#drumstick"/></svg>
+        <p class="menu-no">닭다리 · 클라우드·AI</p>
+        <h3>오손도손</h3>
+        <p class="menu-copy">서비스를 든든하게 받친 인프라와 경량 추천 모델</p>
+        <button type="button" class="btn small" data-open="sheetOson">레시피 보기</button>
+        <dialog id="sheetOson" class="sheet" aria-labelledby="titleOson">
+          <button type="button" class="close" aria-label="닫기">✕</button>
+          <p class="menu-no">SSAFY 자율 프로젝트 우수상 · 2026.04 – 2026.05</p>
+          <h3 id="titleOson">오손도손</h3>
+          <dl class="recipe">
+            <dt>문제</dt><dd>농인 사용자 인터뷰에서 응답 지연이 대화 흐름을 끊는다는 의견을 확인했습니다.</dd>
+            <dt>내 역할</dt><dd>글로스 추천 모델·API 단독 개발, 서비스 인프라와 GPU 서버 운영을 맡았습니다. 수어 인식·번역 모델은 팀원이 개발했고 저는 서빙 환경을 구축했습니다.</dd>
+            <dt>해결</dt><dd>LLM 대신 N-gram과 Word2Vec을 조합하고, 국립국어원 말뭉치 272,042문장을 정제해 학습했습니다.</dd>
+            <dt>구조</dt><dd>AWS EC2·Docker·Nginx·Jenkins 배포, FastAPI on RunPod, Grafana·Loki·Prometheus 모니터링</dd>
+            <dt>검증</dt><dd>시작 스크립트의 GitLab 토큰 만료로 AI 기능이 중단됐을 때 원인을 찾아 갱신하고 복구했습니다.</dd>
+          </dl>
+          <div class="shots"><img src="assets/projects/osondoson-sign.webp" alt="농인 수어 입력 화면" loading="lazy"><img src="assets/projects/osondoson-avatar.webp" alt="청인 음성을 3D 아바타 수어로 표시하는 화면" loading="lazy"><img src="assets/projects/osondoson-gloss.webp" alt="모바일 글로스 추천 화면" loading="lazy"></div>
+          <p class="tags"><span>AWS EC2</span><span>Docker</span><span>Jenkins</span><span>FastAPI</span><span>Grafana</span></p>
+          <p><a href="https://github.com/KangHeejeongg/finalPJT" target="_blank" rel="noopener">GitHub ↗</a></p>
+        </dialog>
+      </article>
+
+      <article class="menu-card reveal" id="menu-carry">
+        <svg class="chicken" aria-hidden="true"><use href="assets/icons.svg#skewer"/></svg>
+        <p class="menu-no">순살 꼬치 · 백엔드·연동</p>
+        <h3>CarryPorter</h3>
+        <p class="menu-copy">로봇, 서버, 화면을 하나로 꿴 Spring 백엔드와 6인 팀 리딩</p>
+        <button type="button" class="btn small" data-open="sheetCarry">레시피 보기</button>
+        <dialog id="sheetCarry" class="sheet" aria-labelledby="titleCarry">
+          <button type="button" class="close" aria-label="닫기">✕</button>
+          <p class="menu-no">SSAFY 공통 프로젝트 우수상 · 2026.01 – 2026.02 · 팀장</p>
+          <h3 id="titleCarry">CarryPorter</h3>
+          <dl class="recipe">
+            <dt>문제</dt><dd>로봇, 사용자, 관리자 화면의 상태를 하나로 맞춰야 했고 팀원마다 사용자 흐름을 다르게 이해했습니다.</dd>
+            <dt>내 역할</dt><dd>팀장, Spring 백엔드, 3D 관리자 화면, 발표를 맡았습니다. MQTT 공통 모듈은 팀원이 구현했습니다.</dd>
+            <dt>해결</dt><dd>JWT 인증과 Refresh Token Rotation, SSE 실시간 알림, MQTT 상태 메시지 구독·처리를 구현했습니다. 발표 일주일 전에는 남은 일정을 수치로 정리해 라인트레이싱 전환을 제안했습니다.</dd>
+            <dt>구조</dt><dd>로봇 MQTT 이벤트 → Spring 처리 → SSE → 사용자·관리자 화면 (3D 화면은 이벤트 기반 시각화)</dd>
+            <dt>검증</dt><dd>AI를 활용해 Testcontainers 통합 테스트를 작성하고, 전체 흐름을 100회 이상 반복 확인했습니다.</dd>
+          </dl>
+          <div class="shots"><img src="assets/projects/carryporter-status.webp" alt="로봇 이동 상태 실시간 표시 화면" loading="lazy"><img src="assets/projects/carryporter-dispatch.webp" alt="관리자 로봇 파견 화면" loading="lazy"><img src="assets/projects/carryporter-locker.webp" alt="관리자 사물함 배정 화면" loading="lazy"></div>
+          <p class="tags"><span>Java</span><span>Spring Boot</span><span>JWT</span><span>SSE</span><span>MQTT</span><span>Testcontainers</span></p>
+          <p><a href="https://github.com/KangHeejeongg/AIoT" target="_blank" rel="noopener">GitHub ↗</a> · <a href="https://youtu.be/zutxE7PEOgU" target="_blank" rel="noopener">최종 발표 영상 ↗</a></p>
+        </dialog>
+      </article>
+
+      <article class="menu-card reveal" id="menu-coach">
+        <svg class="chicken" aria-hidden="true"><use href="assets/icons.svg#chick"/></svg>
+        <p class="menu-no">병아리 코치 · 협업·품질</p>
+        <h3>SSAFY 실습코치</h3>
+        <p class="menu-copy">8개 팀의 일정, MVP 범위, 기술 질의, 발표 준비를 곁에서 지원</p>
+        <button type="button" class="btn small" data-open="sheetCoach">레시피 보기</button>
+        <dialog id="sheetCoach" class="sheet" aria-labelledby="titleCoach">
+          <button type="button" class="close" aria-label="닫기">✕</button>
+          <p class="menu-no">SSAFY 15기 실습코치 · 2026.07 –</p>
+          <h3 id="titleCoach">SSAFY 실습코치</h3>
+          <dl class="recipe">
+            <dt>문제</dt><dd>팀마다 진행 단계와 기술 수준이 달라 일정과 범위를 현실적으로 맞춰야 했습니다.</dd>
+            <dt>내 역할</dt><dd>서울 캠퍼스 8개 팀의 프로젝트 코칭과 SSAFY TV 라이브 MC를 맡았습니다.</dd>
+            <dt>해결</dt><dd>구현 난이도와 남은 일정을 고려해 MVP 범위를 조정하고, 기술 문제의 원인과 해결 방향을 안내했습니다.</dd>
+            <dt>구조</dt><dd>기획 → 개발 → 발표 단계별 진행 점검과 질의 대응</dd>
+            <dt>검증</dt><dd>AI 세션에서 교육생 대상 MCP 입문 강의를 직접 진행했습니다.</dd>
+          </dl>
+          <p class="tags"><span>일정 관리</span><span>MVP 조정</span><span>기술 코칭</span><span>MCP 강의</span></p>
+        </dialog>
+      </article>
+    </div>
+  </section>
+
+  <section id="side" class="wrap">
+    <div class="section-head"><svg class="head-icon" aria-hidden="true"><use href="assets/icons.svg#fries"/></svg><p>Side Menu</p><h2>곁들이면 더 맛있는 프로젝트</h2></div>
+    <div class="side-grid">
+      <a class="side-card reveal" href="https://github.com/KangHeejeongg/CARIN" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/icons.svg#fries"/></svg><img src="assets/projects/carin-cover.webp" alt="" loading="lazy"><b>CAR IN ↗</b><span>Android 기획·개발 전체, 차량 SDK 연동</span></a>
+      <a class="side-card reveal" href="https://github.com/KangHeejeongg/blockchain" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/icons.svg#radish"/></svg><img src="assets/projects/care-cover.webp" alt="" loading="lazy"><b>CARe ↗</b><span>YOLO 추론 연동, 업체 웹앱, 예약 백엔드</span></a>
+      <a class="side-card reveal" href="https://github.com/HwangYooHyun1/Modetec" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="assets/icons.svg#cola"/></svg><img src="assets/projects/monitoring-cover.webp" alt="" loading="lazy"><b>서버 이상탐지 ↗</b><span>React 모니터링 화면, PDF 보고서, 배포</span></a>
+      <div class="side-card reveal"><svg aria-hidden="true"><use href="assets/icons.svg#sauce"/></svg><img src="assets/projects/mask-cover.webp" alt="" loading="lazy"><b>마스크 추천 앱</b><span>Kotlin 진단 화면, Python 분석 연동</span></div>
+    </div>
+  </section>
+
+  <section id="order" class="wrap">
+    <div class="ticket reveal">
+      <div class="section-head"><svg class="head-icon" aria-hidden="true"><use href="assets/icons.svg#sauce"/></svg><p>Order Ticket</p><h2>이 업무엔 이 치킨</h2><span>AI·IT개발 업무 5가지를 제가 직접 해 본 경험과 연결했습니다.</span></div>
+      <ol class="receipt">
+        <li><span>AI 도구를 활용한 백엔드·프론트엔드·앱 개발</span><a href="#menu-carry"><svg class="row-icon" aria-hidden="true"><use href="assets/icons.svg#skewer"/></svg>CarryPorter · 팜피 · CAR IN</a></li>
+        <li><span>팀 내 행정·업무 지원</span><a href="#menu-bot"><svg class="row-icon" aria-hidden="true"><use href="assets/icons.svg#nugget"/></svg>/menu 업무 자동화 <small>유사 경험</small></a></li>
+        <li><span>클라우드 서버 운영·관리</span><a href="#menu-oson"><svg class="row-icon" aria-hidden="true"><use href="assets/icons.svg#drumstick"/></svg>오손도손 인프라</a></li>
+        <li><span>사내 업무 시스템 개발·운영</span><a href="#menu-farmpi"><svg class="row-icon" aria-hidden="true"><use href="assets/icons.svg#wing"/></svg>팜피 운영 어드민</a></li>
+        <li><span>협업 및 일정·품질 관리</span><a href="#menu-coach"><svg class="row-icon" aria-hidden="true"><use href="assets/icons.svg#chick"/></svg>실습코치 · 팀장 <small>유사 경험</small></a></li>
+      </ol>
+      <p class="receipt-total"><span>합계</span><b>업무 개선 → 서비스 개발 → 안정적 운영 → 협업</b></p>
+    </div>
+  </section>
+
+  <section id="ingredients" class="wrap">
+    <div class="section-head"><svg class="head-icon" aria-hidden="true"><use href="assets/icons.svg#radish"/></svg><p>Ingredients</p><h2>바삭함의 재료</h2></div>
+    <div class="ingredients">
+      <div class="reveal"><svg class="ingredient-icon" aria-hidden="true"><use href="assets/icons.svg#iconServer"/></svg><h3>백엔드</h3><p>Java, Spring Boot, Spring Security, FastAPI, MySQL, Redis</p></div>
+      <div class="reveal"><svg class="ingredient-icon" aria-hidden="true"><use href="assets/icons.svg#iconScreen"/></svg><h3>프론트·앱</h3><p>Vue.js, React, TypeScript, Android(Java, Kotlin)</p></div>
+      <div class="reveal"><svg class="ingredient-icon" aria-hidden="true"><use href="assets/icons.svg#iconCloud"/></svg><h3>클라우드·운영</h3><p>AWS EC2, Docker, Jenkins, Nginx, Linux, Grafana, Loki, Prometheus</p></div>
+      <div class="reveal"><svg class="ingredient-icon" aria-hidden="true"><use href="assets/icons.svg#iconSpark"/></svg><h3>AI·자동화</h3><p>Python, N-gram, Word2Vec, YOLO, OpenCV, n8n</p></div>
+    </div>
+    <ul class="seals">
+      <li><svg aria-hidden="true"><use href="assets/icons.svg#iconCap"/></svg><b>서경대학교 컴퓨터공학과</b><span>졸업 2025.08 · 학점 4.15/4.5</span></li>
+      <li><svg aria-hidden="true"><use href="assets/icons.svg#iconCert"/></svg><b>정보처리기사 · SQLD</b><span>2024.06 · 2025.12</span></li>
+      <li><svg aria-hidden="true"><use href="assets/icons.svg#iconTrophy"/></svg><b>SSAFY 14기 수료</b><span>프로젝트 우수상 3회</span></li>
+      <li><svg aria-hidden="true"><use href="assets/icons.svg#iconMedal"/></svg><b>한이음 공모전</b><span>입선 2회</span></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="contact reveal">
+      <svg class="contact-mascot" aria-hidden="true"><use href="assets/icons.svg#chick"/></svg>
+      <div>
+        <p class="contact-tag">주문 접수 대기 중</p>
+        <h2>업무를 이해하고,<br>개발부터 운영까지 연결하겠습니다</h2>
+        <p>현업의 반복 업무를 찾아 개선하고, 사내 시스템과 클라우드 서비스를 안정적으로 운영하는 AI·IT 개발자로 기여하겠습니다.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:he5298@naver.com">이메일로 주문하기</a>
+          <a class="btn line" href="https://github.com/KangHeejeongg" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn line" href="portfolio.pdf" download>PDF 받기</a>
+        </div>
+      </div>
+    </div>
+    <footer>© 강희정 · 개인 포트폴리오</footer>
+  </section>
+</main>
+<script src="main.js" defer></script>
+</body>
+</html>
